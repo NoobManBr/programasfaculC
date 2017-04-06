@@ -15,7 +15,7 @@ menu(){
     puts("0 - Sair");
 }
 
-int quant_pares(int **matriz){
+int quant_pares(int matriz[DIM][DIM]){
     int i,j,cont;
     for(i=0,cont=0; i<DIM; i++)
         for(j=0; j<DIM; j++){
@@ -80,10 +80,10 @@ int seg_maior(int matriz[DIM][DIM]){
 }
 
 void eliminar(int matriz[DIM][DIM]){
-  int i,j,aux;
+  int i,j,a,b,aux;
   for(i=0; i<DIM; i++)
-    aux=matriz[i][j];
     for(j=0; j<DIM; j++){
+      aux=matriz[a][b];
       if(matriz[i][j+1]==aux)
         matriz[i][j+1] = rand()%100;
     }
@@ -103,10 +103,7 @@ int main(){
     for(i=0; i<DIM; i++)
         for(j=0; j<DIM; j++)
             matriz[i][j] = rand()%10;
-    //if(escolha==9)
-      //puts("NOVA MATRIZ");
-    //else
-      puts("MATRIZ ORIGINAL");
+    puts("MATRIZ ORIGINAL");
     for(i=0; i<DIM; i++){
         for(j=0; j<DIM; j++)
             printf("%d ", matriz[i][j]);
@@ -122,8 +119,9 @@ int main(){
         case 3: printf("A quantidade de números com valor maior que a média da matriz é %d\n", maior_media(matriz)); break;
         case 4: printf("O maior valor da matriz é %d\n", maior(matriz)); break;
         case 5: printf("O segundo maior valor da matriz é %d\n", seg_maior(matriz)); break;
-        case 6: eliminar(matriz);
+        case 6: eliminar(matriz); break;
         case 7: break;
     }
   } while(escolha != 0);
 }
+
