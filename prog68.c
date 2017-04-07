@@ -4,7 +4,7 @@
 
 #define DIM 4
 
-menu(){
+void menu(){
     puts("MENU");
     puts("1 - A quantidade de numeros pares da matriz");
     puts("2 - A soma dos números impares da matriz");
@@ -80,12 +80,11 @@ int seg_maior(int matriz[DIM][DIM]){
 }
 
 void eliminar(int matriz[DIM][DIM]){
-  int i,j,a,b,aux;
-  for(i=0; i<DIM; i++)
-    for(j=0; j<DIM; j++){
-      aux=matriz[a][b];
-      if(matriz[i][j+1]==aux)
-        matriz[i][j+1] = rand()%100;
+  int i,j,a,b;
+  for(i=0,a=0; i<DIM; i++)
+    for(j=i+1,b=0; j<DIM; j++){
+      if(matriz[a][b]==matriz[i][j])
+        matriz[i][j] = 50;
     }
     puts("Nova matriz");
     for(i=0; i<DIM; i++){
@@ -124,4 +123,3 @@ int main(){
     }
   } while(escolha != 0);
 }
-
