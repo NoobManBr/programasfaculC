@@ -8,6 +8,8 @@
 #include<stdlib.h>
 #include<math.h>
 
+#define TAM 15
+
 void exibir(int vet[15]){
   int i;
   for(i=0; i<15; i++)
@@ -18,7 +20,7 @@ void exibir(int vet[15]){
 void gerar(int vet[15]){
   int i;
   for(i=0; i<15;i++)
-      vet[i] = rand()%100;
+      vet[i] = 1 + rand()%TAM;
   puts("Esse é seu vetor");
   exibir(vet);
 }
@@ -113,15 +115,14 @@ void ter_maior(int vet[15]){
 }
 
 void subs(int vet[15]){
-  int i,j,ver=1;;
+  int i,a;
 
   exibir(vet);
-  ordenar(vet);
-  for(i=0; i<15; i++){
-    if(vet[i]==vet[i+1]){
-        vet[i] = rand()%100;
-        i=0;
-      }
+  for(a=0; a<15; a++){
+    for(i=a+1; i<15; i++){
+      if(vet[a]==vet[i])
+        vet[i] = 1 + rand()%TAM;
+    }
   }
   exibir(vet);
 }
@@ -132,7 +133,7 @@ void menu(int vet[15]){
   puts("MENU");
   puts("1 - Quantidade de números pares do vetor");
   puts("2 - A soma dos números impares do vetor");
-  puts("3 - A quantidade de números com valor maior do quea média dos números do vetor");
+  puts("3 - A quantidade de números com valor maior do que a média dos números do vetor");
   puts("4 - O maior valor do vetor");
   puts("5 - A maior diferença em valor absoluto entre os elementos consecutivos do vetor");
   puts("6 - Exibir o 3º maior valor do vetor");
@@ -156,7 +157,7 @@ void menu(int vet[15]){
   } while(escolha!=9);
 }
 
-main(){
+int main(){
     int vet[15];
     srand(time(0));
 
