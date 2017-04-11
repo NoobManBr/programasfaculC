@@ -81,10 +81,13 @@ int seg_maior(int matriz[DIM][DIM]){
 
 void eliminar(int matriz[DIM][DIM]){
   int i,j,a,b;
-  for(i=0,a=0; i<DIM; i++)
-    for(j=i+1,b=0; j<DIM; j++){
-      if(matriz[a][b]==matriz[i][j])
-        matriz[i][j] = 50;
+  for(i=0; i<=DIM; i++){
+    for(j=0; j<=DIM; j++)
+        for(a=0; a<DIM; a++)
+            for(b=j+1; b<DIM; b++){
+                if(matriz[a][b]==matriz[i][j])
+                    matriz[i][j] = rand()%50;
+            }
     }
     puts("Nova matriz");
     for(i=0; i<DIM; i++){
