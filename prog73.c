@@ -13,21 +13,20 @@ int main(){
 }
 
 void ordenar(char *s){
-    int i,aux;
+    int i,j,aux;
 
-    for(i=0; i!='\0'; i++){
-        if(s[i]>s[i+1]){
+    for(i=0; s[i]!='\0'; i++){
+        for(j=0; s[j]!='\0'; j++)
+            if(s[i]<s[j]){
                 aux=s[i];
-                s[i]=s[i+1];
-                s[i+1]=aux;
+                s[i]=s[j];
+                s[j]=aux;
             }
         }
-    for(i=0; i!='0';i++)
-        printf("%s", s);
-    putchar('\n');
+    exibir(s);
 }
 
 void exibir(char *s){
-    printf("%s ", s);
+    printf("%s", s);
     putchar('\n');
 }
