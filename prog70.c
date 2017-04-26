@@ -5,9 +5,32 @@
 #define ANOS 8
 #define MESES 12
 
+void menu();
+void gerar(int matriz[ANOS][MESES]);
+void media(int matriz[ANOS][MESES]);
+void maior(int matriz[ANOS][MESES]);
+
+int main(){
+    int matriz[ANOS][MESES];
+    int escolha;
+    srand(time(0));
+
+    gerar(matriz);
+    do{
+    menu();
+    scanf("%d", &escolha);
+    switch(escolha){
+        case 1: media(matriz); break;
+        case 2: maior(matriz); break;
+        case 9: return;
+    }
+    } while(escolha!=0);
+}
+
 void menu(){
     puts("1 - O consumo médio do meses");
     puts("2  Mês e ano que teve maior consumo");
+    puts("9 - Sair");
 }
 
 void gerar(int matriz[ANOS][MESES]){
@@ -46,19 +69,3 @@ void maior(int matriz[ANOS][MESES]){
                 printf("O maior e ANO: %d MÊS: %d = %d\n",i+1,j+1,maior);
 }
 
-int main(){
-    int matriz[ANOS][MESES];
-    int escolha;
-    srand(time(0));
-
-    gerar(matriz);
-    do{
-    menu();
-    scanf("%d", &escolha);
-    switch(escolha){
-        case 1: media(matriz); break;
-        case 2: maior(matriz); break;
-        case 0: return;
-    }
-    } while(escolha!=0);
-}
