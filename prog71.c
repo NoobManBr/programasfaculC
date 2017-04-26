@@ -8,7 +8,7 @@
 int main(){
     int matriz[LINHA][COLUNA];
     int vet1[25], vet2[25];
-    int i,j,maior;
+    int i,j,maior,menor;
     srand(time(0));
 
     for(i=0; i<LINHA; i++){
@@ -19,17 +19,24 @@ int main(){
         putchar('\n');
     }
 
-    for(j=0, maior=matriz[0][0]; j<COLUNA; j++){
+    for(j=0, maior=matriz[0][0],menor=matriz[0][0]; j<COLUNA; j++){
         for(i=0; i<LINHA; i++){
             if(matriz[i][j]>maior)
                 maior=matriz[i][j];
+            if(matriz[i][j]<menor)
+                menor=matriz[i][j];
             if(i==4){
                 vet1[j]=maior;
+                vet2[j]=menor;
                 maior=matriz[0][j+1];
+                menor=matriz[0][j+1];
             }
         }
     }
     putchar('\n');
     for(i=0; i<COLUNA; i++)
         printf("%d ", vet1[i]);
+    putchar('\n');
+    for(i=0; i<COLUNA; i++)
+        printf("%d ", vet2[i]);
 }
