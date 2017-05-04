@@ -15,7 +15,6 @@ int main(){
 }
 
 char *strchar(char *s, char ch){
-    int i;
     char *ptr = s;
 
     while(*ptr!='\0'){
