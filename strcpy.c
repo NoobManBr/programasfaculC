@@ -85,7 +85,7 @@ char *strrev(char *s){ //string invertida
     return s;
 }
 int strcmp(char *s1, char *s2){
-    
+
 }
 int main(){
 	char str1[100],str2[100];
@@ -94,14 +94,12 @@ int main(){
 	menu();
 	scanf("%d", &cho);
     switch(cho){
-        case 1: printf("Entre com a string\n"); scanf("%s", str1); printf("O tamanho da string é %d", strlen(str1)); break;
-        case 2: printf("Entre com a string\n"); scanf("%s", str1);
+        case 1: printf("Entre com a string\n"); getchar(); gets(str1); printf("O tamanho da string é %d", strlen(str1)); break;
+        case 2: printf("Entre com a string\n"); getchar(); gets(str1);
         if(isnull(str1)==0)
             printf("A string não é nula\n");
         else
             printf("A string é nula\n");
         break;
     }
-
-
 }
