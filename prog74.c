@@ -1,6 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
 
-int strchar(char *s, char ch);
+char *strchar(char *s, char ch);
 
 int main(){
     char str[50];
@@ -10,18 +11,19 @@ int main(){
     scanf("%s", str);
     puts("Digite o caractere");
     scanf(" %c", &ch);
-
-    printf("%d",strchar(str,ch));
+    printf("%p",strchar(str,ch));
 }
 
-int strchar(char *s, char ch){
+char *strchar(char *s, char ch){
     int i;
+    char *ptr = s;
 
-    for(i=0; s[i]!='\0';i++){
-        if(s[i]==ch)
-            return &i+1;
+    while(*ptr!='\0'){
+        if(*ptr==ch){
+            printf("%c\n", *ptr);
+            return ptr;
+        }
+    ptr++;
     }
     return NULL;
 }
-
-
