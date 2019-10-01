@@ -1,4 +1,4 @@
-# programasfaculC
+# Linguagem C
 Esse repositório contém meus códigos em C feitos na faculdade.
 
 O projeto está organizado da seguinte maneira
