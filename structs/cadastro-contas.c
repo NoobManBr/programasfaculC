@@ -1,5 +1,6 @@
 /**
  *  Programa em C para simular um cadastro de contas bancárias
+ *    Autor: Maycon Bruno de Jesus
  */
 #include<stdio.h>
 #include<string.h>
